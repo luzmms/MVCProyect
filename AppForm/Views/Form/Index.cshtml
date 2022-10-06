@@ -1,0 +1,36 @@
+﻿@model AppForm.Models.Form
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>MVCProyect</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form action="http://vip.groupehn.com:20003/html/infospost.php" method="post">
+            <label for="FirstName">First name</label><br>
+            <input id="FirstName" type="text" name="FirstName" placeholder="Enter your first name" />
+            <br />
+            <label for="LastName">Last name</label><br>
+            <input id="LastName" type="text" name="LastName" placeholder="Enter your last name" />
+            <br />
+            <label for="Email">Email</label><br>
+            <input id="Email" type="text" name="Email" placeholder="sdfhfgh@gmail.com" />
+            <br />
+            <label for="Request">Ask us:</label><br>
+            <textarea id="Request" name="Request" placeholder="Write..." cols="66" rows="10"></textarea><br>
+            <br />
+            <label for="Country">Country:</label><br>
+            <select id="Country" name="Country">
+                @foreach (var item in Model.CountryList)
+                {
+                    <option>@item.Description</option>
+                }
+            </select>
+            <br />
+            <input type="submit" value="Send your question" />
+        </form>
+    </div>
+</div>
